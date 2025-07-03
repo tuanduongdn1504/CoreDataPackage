@@ -47,6 +47,7 @@ public struct CoreDataConfiguration {
             modelName: modelName,
             bundle: bundle,
             storeURL: storeURL,
+            // Set the options to enable automatic lightweight data migrations when Core Data detects the persistent store no longer matches the current model.
             options: [
                 NSMigratePersistentStoresAutomaticallyOption: true,
                 NSInferMappingModelAutomaticallyOption: true

@@ -35,9 +35,11 @@ public class CoreDataStack {
     }()
     
     public lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
+        // Create a persistent store coordinator with a managed object model.
         let coordinator = NSPersistentStoreCoordinator(managedObjectModel: managedObjectModel)
         
         do {
+            // Set the options when you add the store to the coordinator.
             try coordinator.addPersistentStore(
                 ofType: configuration.storeType,
                 configurationName: nil,
@@ -52,17 +54,27 @@ public class CoreDataStack {
     }()
     
     public lazy var mainContext: NSManagedObjectContext = {
+        // Create a context to interact with managed objects in the main queue.
         let context = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+        
+        // Assign the coordinator to the context.
         context.persistentStoreCoordinator = persistentStoreCoordinator
         context.automaticallyMergesChangesFromParent = true
+        
+        // Prioritize reading data from the persistent store to display on the UI
         context.mergePolicy = NSMergeByPropertyStoreTrumpMergePolicy
         return context
     }()
     
     public func newBackgroundContext() -> NSManagedObjectContext {
+        // Create a context to interact with managed objects in a private dispatch queue.
         let context = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
+        
+        // Any fetch and save operations are mediated by the mainContext instead of a coordinator
         context.parent = mainContext
         context.automaticallyMergesChangesFromParent = true
+        
+        // Prioritize fetching new data from the background context to overwrite the persistent store.
         context.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
         return context
     }
