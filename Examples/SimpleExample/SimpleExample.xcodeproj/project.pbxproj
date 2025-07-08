@@ -11,6 +11,9 @@
 		7133E87F2E1ACF4600EC9348 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7133E87E2E1ACF4600EC9348 /* ContentView.swift */; };
 		7133E8812E1ACF4900EC9348 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7133E8802E1ACF4900EC9348 /* Assets.xcassets */; };
 		7133E8842E1ACF4900EC9348 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7133E8832E1ACF4900EC9348 /* Preview Assets.xcassets */; };
+		7133E88C2E1AD37E00EC9348 /* CoreDataPackage in Frameworks */ = {isa = PBXBuildFile; productRef = 7133E88B2E1AD37E00EC9348 /* CoreDataPackage */; };
+		7133E88F2E1ADCD200EC9348 /* EcommerceModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7133E88D2E1ADCD200EC9348 /* EcommerceModel.xcdatamodeld */; };
+		7133E8912E1ADE8300EC9348 /* EcommerceDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7133E8902E1ADE8300EC9348 /* EcommerceDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,8 @@
 		7133E87E2E1ACF4600EC9348 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7133E8802E1ACF4900EC9348 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7133E8832E1ACF4900EC9348 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		7133E88E2E1ADCD200EC9348 /* EcommerceModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EcommerceModel.xcdatamodel; sourceTree = "<group>"; };
+		7133E8902E1ADE8300EC9348 /* EcommerceDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcommerceDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7133E88C2E1AD37E00EC9348 /* CoreDataPackage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,10 +57,12 @@
 		7133E87B2E1ACF4600EC9348 /* SimpleExample */ = {
 			isa = PBXGroup;
 			children = (
+				7133E88D2E1ADCD200EC9348 /* EcommerceModel.xcdatamodeld */,
 				7133E87C2E1ACF4600EC9348 /* SimpleExampleApp.swift */,
 				7133E87E2E1ACF4600EC9348 /* ContentView.swift */,
 				7133E8802E1ACF4900EC9348 /* Assets.xcassets */,
 				7133E8822E1ACF4900EC9348 /* Preview Content */,
+				7133E8902E1ADE8300EC9348 /* EcommerceDataManager.swift */,
 			);
 			path = SimpleExample;
 			sourceTree = "<group>";
@@ -83,6 +91,9 @@
 			dependencies = (
 			);
 			name = SimpleExample;
+			packageProductDependencies = (
+				7133E88B2E1AD37E00EC9348 /* CoreDataPackage */,
+			);
 			productName = SimpleExample;
 			productReference = 7133E8792E1ACF4600EC9348 /* SimpleExample.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +122,9 @@
 				Base,
 			);
 			mainGroup = 7133E8702E1ACF4600EC9348;
+			packageReferences = (
+				7133E88A2E1AD37E00EC9348 /* XCRemoteSwiftPackageReference "CoreDataPackage" */,
+			);
 			productRefGroup = 7133E87A2E1ACF4600EC9348 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -139,6 +153,8 @@
 			files = (
 				7133E87F2E1ACF4600EC9348 /* ContentView.swift in Sources */,
 				7133E87D2E1ACF4600EC9348 /* SimpleExampleApp.swift in Sources */,
+				7133E8912E1ADE8300EC9348 /* EcommerceDataManager.swift in Sources */,
+				7133E88F2E1ADCD200EC9348 /* EcommerceModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +360,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7133E88A2E1AD37E00EC9348 /* XCRemoteSwiftPackageReference "CoreDataPackage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/tuanduongdn1504/CoreDataPackage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7133E88B2E1AD37E00EC9348 /* CoreDataPackage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7133E88A2E1AD37E00EC9348 /* XCRemoteSwiftPackageReference "CoreDataPackage" */;
+			productName = CoreDataPackage;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		7133E88D2E1ADCD200EC9348 /* EcommerceModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7133E88E2E1ADCD200EC9348 /* EcommerceModel.xcdatamodel */,
+			);
+			currentVersion = 7133E88E2E1ADCD200EC9348 /* EcommerceModel.xcdatamodel */;
+			path = EcommerceModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 7133E8712E1ACF4600EC9348 /* Project object */;
 }
