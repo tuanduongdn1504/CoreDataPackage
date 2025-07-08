@@ -8,12 +8,24 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @Environment(\.managedObjectContext) var managedObjectContext
+    @FetchRequest(sortDescriptors: []) var products: FetchedResults<Product>
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            List(products) { product in
+                Text(product.name ?? "Unknown")
+            }
+            Button("Add") {
+                let productNames = ["Screen", "Iphone", "App Watch"]
+                
+                let product = Product(context: managedObjectContext)
+                product.id = UUID()
+                product.name = "\(productNames.randomElement()!)"
+                
+                try? managedObjectContext.save()
+            }
         }
         .padding()
     }
