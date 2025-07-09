@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "coredatapackage",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/tuanduongdn1504/CoreDataPackage",
+      "state" : {
+        "revision" : "4bc18f6af55c68d38855522b4736b69e80b3be34",
+        "version" : "1.0.0"
+      }
+    }
+  ],
+  "version" : 2
+}
